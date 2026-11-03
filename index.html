@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Pacientes - EPS</title>
+    <title>SAAM</title>
     <style>
         :root {
             --primary-color: #0056b3;
@@ -197,7 +197,7 @@
 <body>
 
     <header>
-        <h1>Portal de Salud EPS</h1>
+        <h1>SAAM</h1>
         <div class="user-info">Juan (Paciente)</div>
     </header>
 
@@ -205,17 +205,17 @@
         <!-- VISTA 1: MENÚ PRINCIPAL -->
         <section id="view-menu" class="card view active">
             <h2>Bienvenido</h2>
-            <p>Seleccione una opción para gestionar sus servicios médicos</p>
+            <p>¿Qué desea hacer?</p>
             
             <div class="button-group">
                 <button class="btn" onclick="cambiarVista('view-agendar')">Agendar Citas</button>
-                <button class="btn" onclick="cambiarVista('view-mis-citas')">Mis Citas</button>
+                <button class="btn" onclick="cambiarVista('view-mis-citas')">Ver Mis Citas</button>
             </div>
         </section>
 
         <!-- VISTA 2: AGENDAR CITAS -->
         <section id="view-agendar" class="card view">
-            <h2>Agendar Cita Médica</h2>
+            <h2>Agendar Cita</h2>
             <p>Complete los datos para solicitar su cita</p>
             
             <div id="alerta-exito" class="alert-success">¡Cita agendada con éxito!</div>
