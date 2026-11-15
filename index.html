@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAAM</title>
+<style>
+:root{--verde-oscuro:#1b5e35;--verde-medio:#2e7d4f;--verde-claro:#bfe3c8;--fondo:#eef7f0;--texto:#14301f}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fondo);color:var(--texto);display:flex;flex-direction:column;min-height:100vh}
+header{background:var(--verde-oscuro);color:#fff;padding:16px 24px}
+header h1{margin:0;font-size:1.75rem;letter-spacing:.04em}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
+.tarjeta{width:100%;max-width:400px;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+.tarjeta.blanca{background:#fff;border:1px solid var(--verde-claro)}
+.tarjeta.clara{background:var(--verde-claro)}
+.tarjeta.sin-caja{padding:0;text-align:center}
+h2{margin:0;font-size:1.5rem}
+.subtitulo{margin:0;font-size:1.1rem}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.95rem}
+input{font:inherit;padding:11px 12px;border:1px solid #8bbf9b;border-radius:8px;background:#fff;color:var(--texto)}
+input:focus-visible,.boton:focus-visible{outline:3px solid var(--verde-medio);outline-offset:2px}
+.boton{display:block;text-align:center;text-decoration:none;font:inherit;font-weight:600;padding:13px 16px;border-radius:10px;border:0;cursor:pointer}
+.boton.oscuro{background:var(--verde-oscuro);color:#fff}
+.boton.claro{background:var(--verde-claro);color:var(--verde-oscuro);border:2px solid var(--verde-oscuro)}
+.boton.oscuro:hover{background:#144a29}
+.boton.claro:hover{background:#a9d8b5}
+</style>
+</head>
+<body>
+<header><h1>SAAM</h1></header>
+<main>
+  <section class="tarjeta sin-caja">
+    <h2>Bienvenido a SAAM</h2>
+    <p class="subtitulo">Agenda tu cita de forma fácil</p>
+    <a class="boton oscuro" href="iniciar-sesion.html">Iniciar sesión</a>
+    <a class="boton claro" href="registro.html">Registrarme</a>
+  </section>
+</main>
+</body>
+</html>
