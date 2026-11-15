@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAAM - Nueva contraseña</title>
+<script>try{if(localStorage.getItem('saam-tema')==='oscuro')document.documentElement.dataset.tema='oscuro'}catch(e){}</script>
+<style>
+:root{--fondo:#eef7f0;--texto:#14301f;--enc:#1b5e35;--tarj:#bfe3c8;--campo:#fff;--borde:#8bbf9b;--bo:#1b5e35;--bo-h:#144a29;--bc:#bfe3c8;--bc-h:#a9d8b5;--bc-t:#1b5e35;--bc-b:#1b5e35;--dlg:#fff}
+html[data-tema=oscuro]{--fondo:#0e1c13;--texto:#dcefe2;--enc:#0b3320;--tarj:#1d3a2a;--campo:#12261a;--borde:#3f7a55;--bo:#2e7d4f;--bo-h:#38935d;--bc:#1d3a2a;--bc-h:#27492f;--bc-t:#bfe3c8;--bc-b:#5fb27f;--dlg:#16301f}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fondo);color:var(--texto);display:flex;flex-direction:column;min-height:100vh}
+header{background:var(--enc);color:#fff;display:flex;align-items:stretch;padding-left:24px}
+header h1{margin:0;font-size:1.75rem;letter-spacing:.04em;padding:16px 0}
+.acciones{margin-left:auto;display:flex}
+.acciones a,.acciones button{font:inherit;color:#fff;background:none;border:0;padding:0 20px;display:flex;align-items:center;cursor:pointer;text-decoration:none}
+.acciones a:hover,.acciones button:hover{background:rgba(255,255,255,.18)}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
+.tarjeta{width:100%;max-width:400px;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+.tarjeta.clara{background:var(--tarj)}
+.tarjeta.sin-caja{padding:0;text-align:center}
+h2{margin:0;font-size:1.5rem}
+.subtitulo{margin:0;font-size:1.1rem}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:11px 12px;border:1px solid var(--borde);border-radius:8px;background:var(--campo);color:var(--texto)}
+input:focus-visible,select:focus-visible,.boton:focus-visible,.acciones :focus-visible{outline:3px solid var(--bc-b);outline-offset:2px}
+.boton{display:block;text-align:center;text-decoration:none;font:inherit;font-weight:600;padding:13px 16px;border-radius:10px;border:0;cursor:pointer}
+.boton.oscuro{background:var(--bo);color:#fff}
+.boton.oscuro:hover{background:var(--bo-h)}
+.boton.claro{background:var(--bc);color:var(--bc-t);border:2px solid var(--bc-b)}
+.boton.claro:hover{background:var(--bc-h)}
+.fila{display:flex;gap:8px;align-items:flex-end}
+.fila label{flex:1}
+.fila .boton{white-space:nowrap}
+dialog{background:var(--dlg);color:var(--texto);border:2px solid var(--bo);border-radius:16px;padding:28px;max-width:360px;text-align:center}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog p{margin:0 0 16px;font-size:1.1rem}
+</style>
+</head>
+<body>
+<header><h1>SAAM</h1><div class="acciones"><button type="button" id="tema" aria-pressed="false">Modo oscuro</button></div></header>
+<main>
+ <section class="tarjeta clara">
+ <h2>Nueva contraseña</h2>
+ <label>Ingrese nueva contraseña<input type="password" name="nueva"></label>
+ <label>Verifique nueva contraseña<input type="password" name="verificacion"></label>
+ <button type="button" class="boton oscuro" onclick="abrir('d-ok')">Guardar</button>
+ </section>
+ <dialog id="d-ok"><p>Ya puedes iniciar sesión</p><a class="boton oscuro" href="iniciar-sesion.html">Aceptar</a></dialog>
+</main>
+<script>
+(function(){var b=document.getElementById('tema'),r=document.documentElement;
+function p(){var o=r.dataset.tema==='oscuro';b.textContent=o?'Modo claro':'Modo oscuro';b.setAttribute('aria-pressed',o)}
+b.addEventListener('click',function(){var o=r.dataset.tema!=='oscuro';if(o)r.dataset.tema='oscuro';else delete r.dataset.tema;
+try{localStorage.setItem('saam-tema',o?'oscuro':'claro')}catch(e){}p()});p()})();
+function abrir(id){document.getElementById(id).showModal()}
+</script>
+</body>
+</html>
