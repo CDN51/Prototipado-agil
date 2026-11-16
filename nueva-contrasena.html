@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAAM - Nueva contraseña</title>
+<script>try{var r=document.documentElement,t=sessionStorage.getItem('saam-tema2');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro';sessionStorage.setItem('saam-tema2',t)}if(t==='oscuro')r.dataset.tema='oscuro';var f=parseInt(sessionStorage.getItem('saam-fuente'));if(f)r.style.fontSize=f+'%'}catch(e){}</script>
+<style>
+:root{--fondo:#eef7f0;--texto:#14301f;--enc:#1b5e35;--tarj:#bfe3c8;--campo:#fff;--borde:#8bbf9b;--bo:#1b5e35;--bo-h:#144a29;--bc:#bfe3c8;--bc-h:#a9d8b5;--bc-t:#1b5e35;--bc-b:#1b5e35;--dlg:#fff;--rojo:#b3261e;--rojo-h:#8f1e18;--gris-b:#6b7570;--dv:#2e7d4f;--dr:#b3261e;--dg:#c9cfcb;--dg-t:#14301f}
+html[data-tema=oscuro]{--fondo:#0e1c13;--texto:#dcefe2;--enc:#0b3320;--tarj:#1d3a2a;--campo:#12261a;--borde:#3f7a55;--bo:#2e7d4f;--bo-h:#38935d;--bc:#1d3a2a;--bc-h:#27492f;--bc-t:#bfe3c8;--bc-b:#5fb27f;--dlg:#16301f;--dg:#3a403c;--dg-t:#dcefe2}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fondo);color:var(--texto);display:flex;flex-direction:column;min-height:100vh;padding-bottom:80px}
+header{background:var(--enc);color:#fff;display:flex;align-items:stretch;padding-left:24px}
+header h1{margin:0;font-size:1.75rem;letter-spacing:.04em;padding:16px 0}
+[tabindex]:focus,[tabindex]:focus-visible{outline:none}
+.acciones{margin-left:auto;display:flex;gap:30px}
+.acciones a,.acciones button{font:inherit;color:#fff;background:none;border:0;padding:0 20px;display:flex;align-items:center;cursor:pointer;text-decoration:none}
+.acciones a:hover,.acciones button:hover{background:rgba(255,255,255,.18)}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
+main.pagina,main.pagina-menu{flex-direction:column;align-items:stretch;justify-content:flex-start}
+.centro{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.eps{align-self:flex-start;margin:0;font-weight:700;font-size:1.1rem}
+.tarjeta{width:100%;max-width:400px;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+.tarjeta.clara{background:var(--tarj)}
+.tarjeta.sin-caja{padding:0;text-align:center}
+.tarjeta>.boton+.boton{margin-top:14px}
+h2{margin:0;font-size:1.5rem}
+.subtitulo{margin:0;font-size:1.1rem}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:11px 12px;border:1px solid var(--borde);border-radius:8px;background:var(--campo);color:var(--texto)}
+input:focus-visible,select:focus-visible,.boton:focus-visible,button:focus-visible,.acciones :focus-visible,.fuente :focus-visible,a:focus-visible{outline:3px solid var(--bc-b);outline-offset:2px}
+.boton{display:block;text-align:center;text-decoration:none;font:inherit;font-weight:600;padding:13px 16px;border-radius:10px;border:0;cursor:pointer}
+.boton.oscuro{background:var(--bo);color:#fff}
+.boton.oscuro:hover{background:var(--bo-h)}
+.boton.claro{background:var(--bc);color:var(--bc-t);border:2px solid var(--bc-b)}
+.boton.claro:hover{background:var(--bc-h)}
+.boton.rojo{background:var(--rojo);color:#fff}
+.boton.rojo:hover{background:var(--rojo-h)}
+.boton.gris{background:var(--gris-b);color:#fff;cursor:not-allowed}
+.fila{display:flex;gap:8px;align-items:flex-end}
+.fila label{flex:1}
+.fila .boton{white-space:nowrap}
+dialog{background:var(--dlg);color:var(--texto);border:2px solid var(--bo);border-radius:16px;padding:28px;max-width:min(26em,92vw);text-align:center}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog p{margin:0 0 16px;font-size:1.1rem}
+.dlg-botones{--w:9em;display:flex;justify-content:center;gap:calc(var(--w)*.3)}
+.dlg-botones .boton{width:var(--w);padding-left:0;padding-right:0;white-space:nowrap}
+main a:not(.boton):not(.dia):not(.ips):not(.tipo):not(.boton-grande){color:var(--texto);font-weight:600}
+.fuente{position:fixed;right:20px;bottom:20px;display:flex;gap:30px;align-items:center;z-index:5}
+.fuente button{background:var(--bo);color:#fff;border:0;border-radius:10px;min-width:44px;height:44px;font-family:inherit;font-weight:700;cursor:pointer}
+#f-menos{font-size:14px}#f-mas{font-size:22px}
+svg.ic{width:1.5em;height:1.5em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+</style>
+</head>
+<body>
+<header><h1 tabindex="0">SAAM</h1><div class="acciones"><button type="button" id="tema" aria-pressed="false">Modo oscuro</button></div></header>
+<main>
+ <section class="tarjeta clara">
+ <h2 tabindex="0">Nueva contraseña</h2>
+ <label><span tabindex="0">Ingrese nueva contraseña</span><input type="password" name="nueva"></label>
+ <label><span tabindex="0">Verifique nueva contraseña</span><input type="password" name="verificacion"></label>
+ <button type="button" class="boton oscuro" onclick="abrir('d-ok')">Guardar</button>
+ </section>
+</main>
+<dialog id="d-ok"><p tabindex="0">Ya puedes iniciar sesión</p><a autofocus class="boton oscuro" href="iniciar-sesion.html">Aceptar</a></dialog>
+<div class="fuente"><button type="button" id="f-menos" aria-label="Disminuir tamaño de letra">A</button><button type="button" id="f-mas" aria-label="Aumentar tamaño de letra">A</button></div>
+<script>
+(function(){var b=document.getElementById('tema'),r=document.documentElement;
+function p(){var o=r.dataset.tema==='oscuro';b.textContent=o?'Modo claro':'Modo oscuro';b.setAttribute('aria-pressed',o)}
+b.addEventListener('click',function(){var o=r.dataset.tema!=='oscuro';if(o)r.dataset.tema='oscuro';else delete r.dataset.tema;
+try{sessionStorage.setItem('saam-tema2',o?'oscuro':'claro')}catch(e){}p()});p();
+function g(){try{return parseInt(sessionStorage.getItem('saam-fuente'))||100}catch(e){return 100}}
+function s(v){v=Math.max(70,Math.min(160,v));r.style.fontSize=v+'%';try{sessionStorage.setItem('saam-fuente',v)}catch(e){}}
+document.getElementById('f-mas').addEventListener('click',function(){s(g()+10)});
+document.getElementById('f-menos').addEventListener('click',function(){s(g()-10)})})();
+function abrir(id){document.getElementById(id).showModal()}
+
+</script>
+</body>
+</html>
