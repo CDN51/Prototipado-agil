@@ -21,6 +21,7 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
 main.pagina,main.pagina-menu{flex-direction:column;align-items:stretch;justify-content:flex-start}
 .centro{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px}
 .eps{align-self:flex-start;margin:0;font-weight:700;font-size:1.1rem}
+.eps.usuario{margin-bottom:6px}
 .tarjeta{width:100%;max-width:400px;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
 .tarjeta.clara{background:var(--tarj)}
 .tarjeta.sin-caja{padding:0;text-align:center}
@@ -63,6 +64,7 @@ svg.ic{width:1.5em;height:1.5em;fill:none;stroke:currentColor;stroke-width:2;str
 <body>
 <header><h1 tabindex="0">SAAM</h1><div class="acciones"><button type="button" id="tema" aria-pressed="false">Modo oscuro</button><button type="button" onclick="abrir('d-cs')">Cerrar sesión</button></div></header>
 <main class="pagina-menu">
+ <p class="eps usuario" tabindex="0">usuario: Alejandro</p>
  <p class="eps" tabindex="0">EPS B</p>
  <nav class="menu">
  <a class="boton-grande" href="tipo-cita.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Agendar cita</span></a>
